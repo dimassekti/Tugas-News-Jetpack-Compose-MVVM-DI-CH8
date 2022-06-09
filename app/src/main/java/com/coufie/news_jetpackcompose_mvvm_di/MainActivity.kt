@@ -9,11 +9,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,10 +23,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.coufie.news_jetpackcompose_mvvm_di.data.ResponseNewsItem
-import com.coufie.news_jetpackcompose_mvvm_di.data.ResponseStafItem
 import com.coufie.news_jetpackcompose_mvvm_di.ui.theme.News_JetpackCompose_MVVM_DITheme
 import com.coufie.news_jetpackcompose_mvvm_di.viewmodel.NewsViewModel
-import com.coufie.news_jetpackcompose_mvvm_di.viewmodel.StafViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
                     val datanews by newsViewModel.dataState.collectAsState()
 
 
-                    Column() {
+                    Column {
                         DashboardMain()
 
                         LazyColumn{
@@ -94,6 +94,7 @@ fun NewsUI(news : ResponseNewsItem) {
             .padding(15.dp)) {
             Card(modifier = Modifier
                 .padding(5.dp)
+                .height(80.dp)
                 .fillMaxWidth()
                 .clickable {
                     val pindah = Intent(mContext, NewsDetail::class.java)
@@ -105,7 +106,7 @@ fun NewsUI(news : ResponseNewsItem) {
                     mContext.startActivity(pindah)
                 }
             ) {
-                Row(){
+                Row {
                     Image(painter = rememberImagePainter(data = news.image ), contentDescription = "img", modifier = Modifier
                         .height(50.dp))
                     Column(modifier = Modifier

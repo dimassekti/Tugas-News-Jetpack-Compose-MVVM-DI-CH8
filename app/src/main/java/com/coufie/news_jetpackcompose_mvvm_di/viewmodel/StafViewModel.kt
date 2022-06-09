@@ -3,7 +3,6 @@ package com.coufie.news_jetpackcompose_mvvm_di.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.coufie.news_jetpackcompose_mvvm_di.NewsRepository
-import com.coufie.news_jetpackcompose_mvvm_di.data.ResponseNewsItem
 import com.coufie.news_jetpackcompose_mvvm_di.data.ResponseStafItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

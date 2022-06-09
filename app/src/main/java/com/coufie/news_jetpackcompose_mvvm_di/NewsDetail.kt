@@ -1,11 +1,13 @@
+@file:Suppress("RemoveCurlyBracesFromTemplate", "RemoveCurlyBracesFromTemplate",
+    "RemoveCurlyBracesFromTemplate"
+)
+
 package com.coufie.news_jetpackcompose_mvvm_di
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -33,10 +35,10 @@ class NewsDetail : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
 
-                    var title = intent.getStringExtra("title")
-                    var author = intent.getStringExtra("author")
-                    var createdat = intent.getStringExtra("createdat")
-                    var image = intent.getStringExtra("image")
+                    val title = intent.getStringExtra("title")
+                    val author = intent.getStringExtra("author")
+                    val createdat = intent.getStringExtra("createdat")
+                    val image = intent.getStringExtra("image")
                     var newsSerializable = intent.getSerializableExtra("news") as ResponseNewsItem?
                     Greeting2(title.toString(), author.toString(), createdat.toString(), image.toString())
                 }
@@ -57,7 +59,7 @@ fun Greeting2(title: String, author : String, createdat : String, image:String) 
         ) {
 
 
-            Row(){
+            Row {
                 Image(painter = rememberImagePainter(data = image ), contentDescription = null)
                 Column(modifier = Modifier
                     .padding(start = 20.dp)

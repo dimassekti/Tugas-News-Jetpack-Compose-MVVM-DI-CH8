@@ -44,7 +44,7 @@ class StafListActivity : ComponentActivity() {
                     val datastaf by stafViewModel.dataState.collectAsState()
 
 
-                    Column() {
+                    Column {
                         DashboardStaf()
 
                         LazyColumn{
@@ -92,6 +92,7 @@ fun StafUI(staf : ResponseStafItem) {
         .padding(15.dp)) {
         Card(modifier = Modifier
             .padding(5.dp)
+            .height(80.dp)
             .fillMaxWidth()
             .clickable {
                 val pindah = Intent(mContext, StafDetail::class.java)
@@ -104,7 +105,7 @@ fun StafUI(staf : ResponseStafItem) {
                 mContext.startActivity(pindah)
             }
         ) {
-            Row(){
+            Row {
                 Image(painter = rememberImagePainter(data = staf.image ), contentDescription = "img", modifier = Modifier
                     .height(50.dp))
                 Column(modifier = Modifier

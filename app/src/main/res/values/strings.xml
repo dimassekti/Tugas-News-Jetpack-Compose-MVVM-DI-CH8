@@ -1,6 +1,6 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">News_JetpackCompose_MVVM_DI</string>
-    <string name="title_activity_detail_news">DetailNews</string>
+    <string name="title_activity_detail_news" tools:ignore="UnusedResources">DetailNews</string>
     <string name="title_activity_news_detail">NewsDetail</string>
     <string name="title_activity_staf_detail">StafDetail</string>
     <string name="title_activity_staf_list">StafListActivity</string>

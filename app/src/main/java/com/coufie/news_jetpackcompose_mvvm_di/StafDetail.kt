@@ -16,7 +16,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import com.coufie.news_jetpackcompose_mvvm_di.data.ResponseNewsItem
 import com.coufie.news_jetpackcompose_mvvm_di.data.ResponseStafItem
 import com.coufie.news_jetpackcompose_mvvm_di.ui.theme.News_JetpackCompose_MVVM_DITheme
 
@@ -85,14 +84,14 @@ fun StafDetail(name: String, email:String, description:String, image : String) {
         ) {
 
 
-            Row(){
+            Row {
                 Image(painter = rememberImagePainter(data = image ), contentDescription = null)
                 Column(modifier = Modifier
                     .padding(start = 20.dp)
                 ) {
-                    Text(text = "name : ${name}")
-                    Text(text = "email : ${email}")
-                    Text(text = "desc : ${description}")
+                    Text(text = "name : $name")
+                    Text(text = "email : $email")
+                    Text(text = "desc : $description")
                 }
             }
         }

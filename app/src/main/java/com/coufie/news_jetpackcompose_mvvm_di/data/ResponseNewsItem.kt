@@ -1,7 +1,6 @@
 package com.coufie.news_jetpackcompose_mvvm_di.data
 
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
